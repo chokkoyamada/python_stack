@@ -15,9 +15,19 @@ class Stack():
         self.content.append(num)
 
     def pop(self):
-        last = self.content[-1]
-        self.content = self.content[0:-1]
-        return last
+        try:
+            last = self.content[-1]
+            self.content = self.content[0:-1]
+            return last
+        except:
+            raise EmptyStackException()
 
     def top(self):
-        return self.content[-1]
+        try:
+            return self.content[-1]
+        except:
+            raise EmptyStackException()
+
+class EmptyStackException(Exception):
+    def __repr__(self):
+        return "The stack is empty."

@@ -1,11 +1,8 @@
 import unittest
 from hamcrest import *
-from Stack import Stack
+from stack import Stack
 
 class StackTest(unittest.TestCase):
-    def test_hoge(self):
-        assert True
-
     def test_class(self):
         stack = Stack()
         assert stack.isEmpty() == True
@@ -19,8 +16,7 @@ class StackTest(unittest.TestCase):
 
         stack.push(4)
 
-        #assert stack.size() == 3
-        assert_that(stack.size, equal_to(3))
+        assert_that(stack.size(), equal_to(3))
 
         assert stack.pop() == 4
 
@@ -29,9 +25,3 @@ class StackTest(unittest.TestCase):
         assert stack.top() == 2
 
         assert stack.size() == 2
-
-
-
-
-
-
